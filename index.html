@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Student granding system</h2>
+
+<p>Key in student score</p>
+
+<input id= "Demo" value = ""/>
+
+<button type = "button"
+onclick = "myfunction()">Click here</button>
+
+<p id="demo"></p>
+
+<script>
+function myfunction(){
+
+let remarks;
+let marks = 
+Number(document.getElementById("Demo").value);
+
+if (marks == ""){
+  remarks = "Please enter marks";
+}else if (marks > 100 || marks < 0){
+  remarks = "Wrong inputy. Please key in marks between 0 to 100";
+}else if (isNaN (marks)){
+  remarks = "Key in numbers only. 0 to 100";
+}else if (marks >= 90) {
+  remarks = "Excellent work";
+}else if (marks >= 70){
+  remarks = "Very good";
+}else if (marks >= 50){
+  remarks = "Good";
+}else if (marks >= 40){
+  remarks = "Fair";
+}else{
+  remarks = "Pull up your socks";
+ }
+
+document.getElementById("demo").innerHTML = "Student remarks is:"+ " " + remarks;}
+</script>
+
+</body>
+</html>
