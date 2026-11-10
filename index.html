@@ -16,15 +16,18 @@ onclick = "myfunction()">Click here</button>
 function myfunction(){
 
 let remarks;
-let marks = 
-Number(document.getElementById("Demo").value);
+let value = document.getElementById("Demo").value.trim();
+let marks = Number(value);
 
-if (marks == ""){
+// Check for empty input, non-numeric input, and valid range
+if (value === ""){
   remarks = "Please enter marks";
-}else if (marks > 100 || marks < 0){
-  remarks = "Wrong inputy. Please key in marks between 0 to 100";
-}else if (isNaN (marks)){
+// Check for non-numeric input
+}else if (isNaN(marks)){
   remarks = "Key in numbers only. 0 to 100";
+// Check for marks outside the valid range
+}else if (marks > 100 || marks < 0){
+  remarks = "Wrong input. Please key in marks between 0 to 100";
 }else if (marks >= 90) {
   remarks = "Excellent work";
 }else if (marks >= 70){
